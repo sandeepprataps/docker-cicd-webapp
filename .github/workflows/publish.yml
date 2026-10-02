@@ -41,3 +41,24 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to AWS EC2
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            docker pull ghcr.io/sandeepprataps/docker-cicd-webapp:main
+            docker stop docker-cicd-webapp || true
+            docker rm docker-cicd-webapp || true
+            docker run -d \
+              --name docker-cicd-webapp \
+              -p 80:80 \
+              ghcr.io/sandeepprataps/docker-cicd-webapp:main
