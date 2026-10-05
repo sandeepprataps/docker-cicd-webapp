@@ -116,9 +116,37 @@ docker run -d \
   -p 8080:80 \
   docker-cicd-webapp
 
-Open the application:
 
+
+Open the application:
 http://localhost:8080
+
+
+
+## Project Screenshots
+
+### Production Dashboard
+
+![Production Dashboard](screenshots/01dashboard.png)
+
+### Deployment Pipeline & Infrastructure
+
+![Deployment Pipeline](screenshots/02dashboard.png)
+
+### Architecture & Technology Stack
+
+![Architecture](screenshots/03dashboard.png)
+
+### Docker CI/CD Pipeline
+
+![Docker CI/CD](screenshots/docker-cicd.png)
+
+### AWS EC2 Infrastructure
+
+![AWS EC2 Infrastructure](screenshots/ec2-infrastructure.png)
+
+
+
 Project Structure
 docker-cicd-webapp/
 │
