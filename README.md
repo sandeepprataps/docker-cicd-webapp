@@ -1,5 +1,9 @@
 # CloudOps Deployment Platform
 
+[![Docker CI/CD](https://github.com/sandeepprataps/docker-cicd-webapp/actions/workflows/ci.yml/badge.svg)](https://github.com/sandeepprataps/docker-cicd-webapp/actions/workflows/ci.yml)
+
+[![Publish Docker Image](https://github.com/sandeepprataps/docker-cicd-webapp/actions/workflows/publish.yml/badge.svg)](https://github.com/sandeepprataps/docker-cicd-webapp/actions/workflows/publish.yml)
+
 > Automated Container Delivery & Production Infrastructure using Docker, GitHub Actions, GitHub Container Registry, and AWS EC2.
 
 ## Overview
@@ -39,29 +43,29 @@ Production Web Application
 
 ## Technology Stack
 
-Frontend: HTML5, CSS3
-Web Server: Nginx
-Containerization: Docker
-CI/CD: GitHub Actions
-Container Registry: GitHub Container Registry (GHCR)
-Cloud Platform: AWS
-Compute: Amazon EC2
-Operating System: Amazon Linux 2023
-Version Control: Git & GitHub
-CI/CD Pipeline
+- Frontend: HTML5, CSS3
+- Web Server: Nginx
+- Containerization: Docker
+- CI/CD: GitHub Actions
+- Container Registry: GitHub Container Registry (GHCR)
+- Cloud Platform: AWS
+- Compute: Amazon EC2
+- Operating System: Amazon Linux 2023
+- Version Control: Git & GitHub
+- CI/CD Pipeline
 
 
 ## The deployment pipeline follows these steps:
 
-Developer pushes changes to the main branch.
-GitHub Actions automatically starts the workflow.
-The application is checked out from the repository.
-Docker builds the application image.
-The Docker image is published to GitHub Container Registry.
-GitHub Actions connects to the AWS EC2 server.
-The latest container image is pulled from GHCR.
-The previous container is replaced with the new version.
-The updated application becomes available through the EC2 server.
+- Developer pushes changes to the main branch.
+- GitHub Actions automatically starts the workflow.
+- The application is checked out from the repository.
+- Docker builds the application image.
+- The Docker image is published to GitHub Container Registry.
+- GitHub Actions connects to the AWS EC2 server.
+- The latest container image is pulled from GHCR.
+- The previous container is replaced with the new version.
+- The updated application becomes available through the EC2 server.
 
 
 ## Docker
