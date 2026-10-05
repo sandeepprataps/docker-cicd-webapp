@@ -10,7 +10,7 @@ The project demonstrates how a web application can be packaged as a Docker conta
 
 ## Architecture
 
-
+```text
 Developer
     │
     ▼
@@ -35,9 +35,9 @@ AWS EC2
     │
     ▼
 Production Web Application
+```
 
-
-Technology Stack
+## Technology Stack
 
 Frontend: HTML5, CSS3
 Web Server: Nginx
@@ -51,7 +51,7 @@ Version Control: Git & GitHub
 CI/CD Pipeline
 
 
-The deployment pipeline follows these steps:
+## The deployment pipeline follows these steps:
 
 Developer pushes changes to the main branch.
 GitHub Actions automatically starts the workflow.
@@ -62,8 +62,9 @@ GitHub Actions connects to the AWS EC2 server.
 The latest container image is pulled from GHCR.
 The previous container is replaced with the new version.
 The updated application becomes available through the EC2 server.
-Docker
 
+
+## Docker
 
 The application uses Nginx as the web server.
 
@@ -74,7 +75,9 @@ LABEL org.opencontainers.image.source="https://github.com/sandeepprataps/docker-
 COPY index.html /usr/share/nginx/html/index.html
 
 EXPOSE 80
-GitHub Container Registry
+
+
+## GitHub Container Registry
 
 Docker images are published to:
 
@@ -84,7 +87,7 @@ The image is automatically updated through the GitHub Actions workflow.
 
 
 
-AWS EC2 Deployment
+## AWS EC2 Deployment
 
 The application is deployed on an Amazon EC2 instance running Amazon Linux 2023.
 
@@ -96,14 +99,12 @@ The deployment is automated through GitHub Actions.
 
 
 
-Local Setup
+## Local Setup
 
 Clone the repository:
 
 git clone https://github.com/sandeepprataps/docker-cicd-webapp.git
 cd docker-cicd-webapp
-
-
 
 Build the Docker image:
 
@@ -116,9 +117,8 @@ docker run -d \
   -p 8080:80 \
   docker-cicd-webapp
 
+ Open the application:
 
-
-Open the application:
 http://localhost:8080
 
 
@@ -147,7 +147,9 @@ http://localhost:8080
 
 
 
-Project Structure
+## Project Structure
+
+```text
 docker-cicd-webapp/
 │
 ├── .github/
@@ -155,37 +157,50 @@ docker-cicd-webapp/
 │       ├── ci.yml
 │       └── publish.yml
 │
+├── screenshots/
+│   ├── 01dashboard.png
+│   ├── 02dashboard.png
+│   ├── 03dashboard.png
+│   ├── docker-cicd.png
+│   └── ec2-infrastructure.png
+│
 ├── .gitignore
 ├── Dockerfile
 ├── index.html
 └── README.md
-Key Features
-Containerized web application
-Production-style dashboard UI
-Docker-based deployment
-Automated Docker image builds
-GitHub Container Registry integration
-Automated AWS EC2 deployment
-Continuous delivery using GitHub Actions
-Nginx-based production container
-Responsive dashboard interface
-Security
+```
+
+## Key Features
+
+- Containerized web application
+- Production-style dashboard UI
+- Docker-based deployment
+- Automated Docker image builds
+- GitHub Container Registry integration
+- Automated AWS EC2 deployment
+- Continuous delivery using GitHub Actions
+- Nginx-based production container
+- Responsive dashboard interface
+
+## Security
 
 Sensitive credentials are not stored in the repository.
 
 AWS SSH credentials and deployment configuration are managed through GitHub Actions Secrets.
 
-Future Improvements
-HTTPS with a custom domain
-AWS Application Load Balancer
-Infrastructure as Code using Terraform
-Monitoring and logging
-Automated rollback
-Blue-green deployment
-AWS CloudWatch integration
-Author
+## Future Improvements
 
-Sandeep Pratap Singh
+- HTTPS with a custom domain
+- AWS Application Load Balancer
+- Infrastructure as Code using Terraform
+- Monitoring and logging
+- Automated rollback
+- Blue-green deployment
+- AWS CloudWatch integration
 
-GitHub:
+## Author
+
+**Sandeep Pratap Singh**
+
+GitHub:  
 https://github.com/sandeepprataps
